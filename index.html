@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rogerio Almeida Coaching — Bravery, Clarity, and What Matters Most</title>
+<meta name="description" content="Career, leadership, and executive coaching. Partnering with you to move through transitions with bravery and clarity." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #14213D;
+    --ink-soft: #1F2D52;
+    --paper: #FAF7F2;
+    --paper-warm: #F2EBE0;
+    --accent: #E5552E;
+    --accent-deep: #B83A18;
+    --rule: rgba(14,17,22,0.12);
+    --muted: #5A6170;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+
+  /* ---------- LAYOUT ---------- */
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    height: 72px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .brand-mark { width: 42px; height: auto; flex-shrink: 0; }
+  .brand em { font-style: normal; color: var(--accent); }
+  .nav-right { display: flex; align-items: center; gap: 14px; }
+  .nav-links { display: flex; gap: 30px; }
+  .nav-links a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color .2s, border-color .2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a.active {
+    color: var(--ink);
+    font-weight: 600;
+    border-bottom-color: var(--ink);
+  }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background .2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* ---------- LANGUAGE TOGGLE ---------- */
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    background: var(--paper-warm);
+    border-radius: 999px;
+    padding: 3px;
+  }
+  .lang-btn {
+    background: none;
+    border: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 6px 11px;
+    cursor: pointer;
+    color: var(--muted);
+    border-radius: 999px;
+    transition: background .15s, color .15s;
+  }
+  .lang-btn.active { background: var(--ink); color: var(--paper); }
+  .lang-btn:hover:not(.active) { color: var(--ink); }
+
+  @media (max-width: 860px) { .nav-links { display: none; } }
+  @media (max-width: 460px) { .nav-cta { display: none; } }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 96px 0 120px; position: relative; overflow: hidden; }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 520px;
+    height: 520px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.10;
+    z-index: 0;
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 880px; }
+  .hero-mark { display: block; width: 72px; height: auto; margin-bottom: 32px; color: var(--ink); }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-bottom: 28px;
+  }
+  .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--accent); }
+  .hero h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: clamp(44px, 7vw, 84px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .hero p.lead {
+    font-size: clamp(18px, 1.6vw, 21px);
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 0 40px;
+  }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform .15s ease, background .2s, color .2s, box-shadow .2s;
+    border: 2px solid transparent;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px -10px rgba(229,85,46,0.55);
+  }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn .arrow { font-size: 17px; }
+
+  /* ---------- SECTION SHARED ---------- */
+  section { padding: 110px 0; border-top: 1px solid var(--rule); }
+  .section-head {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 60px;
+    margin-bottom: 64px;
+    align-items: start;
+  }
+  .section-label {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    padding-top: 14px;
+    border-top: 2px solid var(--ink);
+    width: max-content;
+  }
+  .section-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 720px;
+  }
+  .section-intro { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0; }
+  @media (max-width: 760px) {
+    .section-head { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  /* ---------- MISSION STRIP ---------- */
+  .mission {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 0;
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .mission::after {
+    content: "";
+    position: absolute;
+    bottom: -200px;
+    left: -120px;
+    width: 380px;
+    height: 380px;
+    background: var(--accent);
+    border-radius: 50%;
+    opacity: 0.18;
+  }
+  .mission-text {
+    position: relative;
+    z-index: 1;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    max-width: 980px;
+  }
+  .mission-text strong { font-weight: 900; font-style: normal; color: var(--accent); }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-photo {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--paper-warm), #E4D9C4);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .about-photo::after {
+    content: "[ drop photo.jpg into your site folder ]";
+    position: absolute;
+    z-index: -1;
+  }
+  .about-body p { font-size: 17px; color: var(--ink-soft); margin: 0 0 18px; }
+  .about-body p:first-child {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .credentials {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .credentials div { font-size: 14px; color: var(--muted); }
+  .credentials strong {
+    display: block;
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  @media (max-width: 820px) {
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .experience-prose { max-width: 820px; }
+  .experience-prose p {
+    font-size: clamp(17px, 1.35vw, 19px);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+  }
+  .experience-prose p:first-of-type {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.4;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .experience-footnote {
+    margin-top: 56px;
+    padding: 28px 32px;
+    background: var(--paper-warm);
+    border-radius: 12px;
+    border-left: 3px solid var(--accent);
+    font-size: 15.5px;
+    color: var(--ink);
+    max-width: 820px;
+  }
+  .experience-footnote strong {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-bottom: 8px;
+  }
+
+  /* ---------- VALUES ---------- */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .value-card {
+    background: var(--paper-warm);
+    border-radius: 16px;
+    padding: 32px 26px;
+    position: relative;
+    transition: transform .2s, background .2s;
+  }
+  .value-card:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translateY(-4px);
+  }
+  .value-card:hover .value-num { color: var(--accent); }
+  .value-num {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 44px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 20px;
+    transition: color .2s;
+  }
+  .value-card h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .value-card p { margin: 0; font-size: 14.5px; line-height: 1.5; }
+  @media (max-width: 980px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .values-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+  }
+  .service-card:hover {
+    border-color: var(--ink);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -22px rgba(14,17,22,0.4);
+  }
+  .service-card.featured {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .service-card.featured .service-price { color: var(--accent); }
+  .service-card.featured .service-list li::before { color: var(--accent); }
+  .service-card.featured .btn-ghost {
+    border-color: var(--paper);
+    color: var(--paper);
+  }
+  .service-card.featured .btn-ghost:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+  }
+  .service-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--paper);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+    width: max-content;
+  }
+  .service-card h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.15;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .service-desc { font-size: 15px; opacity: 0.85; margin: 0 0 20px; }
+  .service-price {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: var(--accent-deep);
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+  .service-price small {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+  }
+  .service-prices-dual {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+  .price-tier { display: flex; flex-direction: column; }
+  .price-value {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 30px;
+    color: var(--accent-deep);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .service-card.featured .price-value { color: var(--accent); }
+  .price-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 6px;
+    font-family: 'Inter', sans-serif;
+  }
+  .service-card.featured .price-label { color: rgba(250,247,242,0.7); }
+  .price-divider { width: 1px; height: 32px; background: var(--rule); }
+  .service-card.featured .price-divider { background: rgba(250,247,242,0.18); }
+  .service-list { list-style: none; margin: 24px 0 28px; padding: 0; flex: 1; }
+  .service-list li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 12px;
+    font-size: 14.5px;
+  }
+  .service-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  @media (max-width: 920px) { .services-grid { grid-template-columns: 1fr; } }
+  .services-note {
+    margin-top: 48px;
+    padding: 22px 28px;
+    background: var(--paper-warm);
+    border-radius: 12px;
+    border-left: 3px solid var(--accent);
+    max-width: 820px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  .services-note strong {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    flex-shrink: 0;
+  }
+  .services-note span { font-size: 15.5px; color: var(--ink); }
+
+  /* ---------- CONTACT ---------- */
+  .contact { background: var(--ink); color: var(--paper); border-top: none; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: clamp(36px, 5vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+  .contact h2 em { color: var(--accent); font-style: italic; font-weight: 500; }
+  .contact .lead { font-size: 18px; opacity: 0.85; margin: 0 0 36px; max-width: 480px; }
+  .booking-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 24px;
+  }
+  .booking-card h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 0 6px;
+  }
+  .booking-card p { margin: 0 0 16px; font-size: 15px; opacity: 0.85; }
+  .booking-card .btn-primary { background: var(--accent); color: var(--paper); }
+  .booking-card .btn-primary:hover { background: var(--paper); color: var(--ink); }
+
+  form { background: var(--paper); color: var(--ink); padding: 36px; border-radius: 18px; }
+  form h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 800;
+    font-size: 22px;
+    margin: 0 0 6px;
+  }
+  form > p { margin: 0 0 22px; font-size: 14px; color: var(--muted); }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+  .field input, .field textarea, .field select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--rule);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    background: var(--paper);
+    color: var(--ink);
+    transition: border-color .15s;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .field textarea { min-height: 110px; resize: vertical; }
+  form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 15px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background .2s, transform .15s;
+  }
+  form button:hover { background: var(--accent); transform: translateY(-1px); }
+  @media (max-width: 880px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    form { padding: 28px; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 50px 0 36px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--paper);
+  }
+  .footer-mark { width: 40px; height: auto; flex-shrink: 0; }
+  .footer-brand em { font-style: normal; color: var(--accent); }
+  footer p { margin: 0; font-size: 13px; opacity: 0.65; }
+  .footer-social { display: flex; align-items: center; gap: 14px; }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: var(--paper);
+    transition: background .2s, border-color .2s, color .2s;
+  }
+  .footer-social a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+  }
+  .footer-social svg { width: 16px; height: 16px; }
+  .linkedin-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--paper);
+    opacity: 0.75;
+    text-decoration: none;
+    transition: opacity .2s, color .2s;
+  }
+  .linkedin-inline:hover { opacity: 1; color: var(--accent); }
+  .linkedin-inline svg { width: 16px; height: 16px; }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" data-i18n-aria="aria.home" aria-label="Rogerio Almeida Coaching — home">
+      <svg class="brand-mark" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 18 72 Q 60 -2 102 72" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="18" cy="72" r="6" fill="var(--accent)"/>
+        <circle cx="102" cy="72" r="6" fill="var(--accent)"/>
+      </svg>
+      <span class="brand-text">Rogerio Almeida<em>.</em> Coaching</span>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#values" data-i18n="nav.values">Values</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <a href="#contact" class="nav-cta" data-i18n="nav.cta">Book a call</a>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="pt">PT</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" style="border-top: none;">
+  <div class="container hero-inner">
+    <svg class="hero-mark" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M 18 72 Q 60 -2 102 72" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="18" cy="72" r="6" fill="var(--accent)"/>
+      <circle cx="102" cy="72" r="6" fill="var(--accent)"/>
+    </svg>
+    <div class="eyebrow" data-i18n="hero.eyebrow">Career · Leadership · Executive Coaching</div>
+    <h1 data-i18n="hero.title">Move through change with <em>bravery</em> and <em>clarity</em>.</h1>
+    <p class="lead" data-i18n="hero.lead">I'm a career and executive coach who partners with professionals stepping into local or international leadership roles—from their first management job to senior executive positions. Instead of giving advice, I help them unleash their potential by creating and improving self-awareness, empowering them to overcome struggles and build strong, high-performing teams.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Book a discovery call <span class="arrow">→</span></a>
+      <a href="#services" class="btn btn-ghost" data-i18n="hero.cta2">See how I work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION STRIP ============ -->
+<section class="mission">
+  <div class="container">
+    <p class="mission-text" data-i18n="mission.text">
+      Partnering with you to get through career and life changes with <strong>bravery</strong> and <strong>clarity</strong>. Together, we build a bridge to what matters most — helping you understand yourself better, reach your goals, and find real satisfaction.
+    </p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="about.label">01 — About</div>
+      <div>
+        <h2 class="section-title" data-i18n="about.title">Hi, I'm Rogerio.</h2>
+        <p class="section-intro" data-i18n="about.intro">A coach for the moments when something has to change — and you want a steady, honest partner walking alongside you.</p>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="photo.jpg" alt="Rogerio Almeida" onerror="this.style.display='none'" />
+      </div>
+      <div class="about-body">
+        <p data-i18n="about.p1">I work with professionals navigating career pivots, stepping into bigger leadership, and asking the deeper questions about what they actually want their lives to look like.</p>
+        <p data-i18n="about.p2">My approach is grounded and direct. We'll create a strong partnership to get clear on what matters, name what's getting in the way, and build the kind of action that's both brave and sustainable.</p>
+        <p data-i18n="about.p3">I bring more than 20 years of experience leading global teams, complex projects, and people through change — across multinational organizations in technology, consumer goods, and enterprise software, with work in Canada, Brazil, and Latin America.</p>
+        <p data-i18n="about.p4">For the past 8 years, I've also coached professionals at IBM and mentored Computer Science students at the University of Toronto.</p>
+
+        <div class="credentials">
+          <div>
+            <strong data-i18n="about.cred1.label">Coaching Training</strong>
+            <span data-i18n="about.cred1.value">Coach Academy Professional Coach Level 2 (ICF PCC track)</span>
+          </div>
+          <div>
+            <strong data-i18n="about.cred2.label">Background</strong>
+            <span data-i18n="about.cred2.value">Global sales enablement, project management, procurement &amp; IT leadership</span>
+          </div>
+          <div>
+            <strong data-i18n="about.cred3.label">Specialties</strong>
+            <span data-i18n="about.cred3.value">Career transitions, executive leadership, personal growth</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFESSIONAL EXPERIENCE ============ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="exp.label">02 — Experience</div>
+      <div>
+        <h2 class="section-title" data-i18n="exp.title">A career built on leading people through change.</h2>
+        <p class="section-intro" data-i18n="exp.intro">The experience that shapes my coaching today started long before I called myself a coach.</p>
+      </div>
+    </div>
+
+    <div class="experience-prose">
+      <p data-i18n="exp.p1">My career has progressed from front-line technical and operational roles into senior global leadership across information technology, procurement, and sales enablement. I've worked on the ground in Brazil and Canada, held senior management responsibility for Latin America and the Caribbean, and spent more than a decade leading global teams. The through-line has been a willingness to take on what didn't yet exist, build it well, and lead the people doing the work.</p>
+      <p data-i18n="exp.p2">Across these chapters, I've consistently led cross-functional teams through significant transitions: standing up new organizations from scratch, navigating cross-border and cross-cultural complexity, redesigning the processes underneath strategic change, and closing things gracefully when it was time. The leadership skills that shape my coaching today come directly from that work — knowing how to hold steady through ambiguity, how to ask the right question at the right moment, and how to help people find traction when the path forward isn't yet clear.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section id="values" style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="values.label">03 — Values</div>
+      <div>
+        <h2 class="section-title" data-i18n="values.title">The pillars I coach from.</h2>
+        <p class="section-intro" data-i18n="values.intro">Every partnership I build is rooted in these four commitments — to you, and to the work we do together.</p>
+      </div>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <h3 data-i18n="values.v1.title">Bravery &amp; Fierce Resilience</h3>
+        <p data-i18n="values.v1.desc">Facing transitions with the strength and courage to keep moving forward — even when the path isn't clear yet.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3 data-i18n="values.v2.title">The Grace of Kindness</h3>
+        <p data-i18n="values.v2.desc">Rooting every coaching partnership in empathy, support, and real human connection.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3 data-i18n="values.v3.title">Honesty</h3>
+        <p data-i18n="values.v3.desc">Building trust through transparent, authentic communication — even when the truth is hard to hear.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">04</div>
+        <h3 data-i18n="values.v4.title">Fair-minded Action</h3>
+        <p data-i18n="values.v4.desc">Ensuring growth is driven by equity, balance, and clear purpose — never pressure or performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label" data-i18n="services.label">04 — Services</div>
+      <div>
+        <h2 class="section-title" data-i18n="services.title">Ways we can work together.</h2>
+        <p class="section-intro" data-i18n="services.intro">Whether you're testing the waters or ready for a deeper engagement, there's a way in that fits where you are.</p>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3 data-i18n="services.s1.title">Discovery Call</h3>
+        <p class="service-desc" data-i18n="services.s1.desc">A free, low-pressure conversation to explore what you're navigating and whether we're a good fit.</p>
+        <div class="service-price"><span data-i18n="services.s1.price">Free</span> <small data-i18n="services.s1.duration">· 30 min</small></div>
+        <ul class="service-list">
+          <li data-i18n="services.s1.li1">30-minute virtual call</li>
+          <li data-i18n="services.s1.li2">No commitment to continue</li>
+          <li data-i18n="services.s1.li3">Get a sense of how I work</li>
+          <li data-i18n="services.s1.li4">Leave with one clear next step</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-i18n="services.s1.btn">Book a call →</a>
+      </div>
+
+      <div class="service-card featured">
+        <span class="service-tag" data-i18n="services.s2.tag">Most chosen</span>
+        <h3 data-i18n="services.s2.title">Multi-Session Package</h3>
+        <p class="service-desc" data-i18n="services.s2.desc">Deep, sustained coaching for big transitions — a new role, a career pivot, a leadership leap.</p>
+        <div class="service-prices-dual">
+          <div class="price-tier">
+            <span class="price-value" data-i18n="services.s2.tier1.price">CAD$ 750</span>
+            <span class="price-label" data-i18n="services.s2.tier1.label">3 sessions</span>
+          </div>
+          <div class="price-divider"></div>
+          <div class="price-tier">
+            <span class="price-value" data-i18n="services.s2.tier2.price">CAD$ 1,200</span>
+            <span class="price-label" data-i18n="services.s2.tier2.label">6 sessions</span>
+          </div>
+        </div>
+        <ul class="service-list">
+          <li data-i18n="services.s2.li1">60-minute one-to-one sessions</li>
+          <li data-i18n="services.s2.li2">Email support between sessions</li>
+          <li data-i18n="services.s2.li3">Personalized practice between meetings</li>
+          <li data-i18n="services.s2.li4">Custom goals and progress check-ins</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-i18n="services.s2.btn">Get started →</a>
+      </div>
+
+      <div class="service-card">
+        <h3 data-i18n="services.s3.title">Group Coaching &amp; Workshops</h3>
+        <p class="service-desc" data-i18n="services.s3.desc">Cohort-based programs and bespoke workshops for teams navigating change together.</p>
+        <div class="service-price"><span data-i18n="services.s3.price">CAD$ 250</span> <small data-i18n="services.s3.duration">· per participant</small></div>
+        <ul class="service-list">
+          <li data-i18n="services.s3.li1">Small-group cohorts (6–8 people)</li>
+          <li data-i18n="services.s3.li2">Six biweekly sessions over 3 months</li>
+          <li data-i18n="services.s3.li3">Team and organizational offerings</li>
+          <li data-i18n="services.s3.li4">Custom curriculum design available</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" data-i18n="services.s3.btn">Inquire →</a>
+      </div>
+    </div>
+
+    <div class="services-note">
+      <strong data-i18n="services.sessions.label">Sessions</strong>
+      <span data-i18n="services.sessions.value">Virtual, worldwide · English &amp; Portuguese</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label" style="color: var(--accent); border-color: var(--paper);" data-i18n="contact.label">05 — Get in touch</div>
+        <h2 style="margin-top: 28px;" data-i18n="contact.title">Ready to begin? <em>Let's talk.</em></h2>
+        <p class="lead" data-i18n="contact.lead">The first step is a conversation. Book a free discovery call or send a note below — I read every message personally and reply within two business days.</p>
+
+        <div class="booking-card">
+          <h4 data-i18n="contact.booking.title">Book a discovery call</h4>
+          <p data-i18n="contact.booking.desc">30 minutes, free, no commitment. Pick a time that works for you.</p>
+          <a href="https://calendly.com/rtalmeida" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="contact.booking.btn">
+            Open booking calendar →
+          </a>
+        </div>
+
+        <a class="linkedin-inline" href="https://www.linkedin.com/in/rogeriotalmeida" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.86-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.34 7.43A2.06 2.06 0 1 1 5.34 3.3a2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          <span data-i18n="contact.linkedin">Or connect on LinkedIn</span>
+        </a>
+      </div>
+
+      <form action="mailto:rtalmeida@gmail.com" method="POST" enctype="text/plain">
+        <h3 data-i18n="form.title">Or send a note</h3>
+        <p data-i18n="form.intro">Tell me a little about what you're navigating.</p>
+
+        <div class="field">
+          <label for="name" data-i18n="form.name">Your name</label>
+          <input id="name" name="Name" type="text" required />
+        </div>
+
+        <div class="field">
+          <label for="email" data-i18n="form.email">Email</label>
+          <input id="email" name="Email" type="email" required />
+        </div>
+
+        <div class="field">
+          <label for="focus" data-i18n="form.focus">What are you working through?</label>
+          <select id="focus" name="Focus area">
+            <option data-i18n="form.option1">Career transition</option>
+            <option data-i18n="form.option2">Leadership / executive coaching</option>
+            <option data-i18n="form.option3">Personal growth</option>
+            <option data-i18n="form.option4">Group coaching / workshop inquiry</option>
+            <option data-i18n="form.option5">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message" data-i18n="form.message">A bit more (optional)</label>
+          <textarea id="message" name="Message" data-i18n-placeholder="form.placeholder" placeholder="Anything you'd like me to know before we talk..."></textarea>
+        </div>
+
+        <button type="submit" data-i18n="form.submit">Send message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg class="footer-mark" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 18 72 Q 60 -2 102 72" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="18" cy="72" r="6" fill="var(--accent)"/>
+        <circle cx="102" cy="72" r="6" fill="var(--accent)"/>
+      </svg>
+      <span>Rogerio Almeida<em>.</em> Coaching</span>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/rogeriotalmeida" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.86-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.86 3.37-1.86 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.34 7.43A2.06 2.06 0 1 1 5.34 3.3a2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      </a>
+    </div>
+    <p>© <span id="year"></span> <span data-i18n="footer.tagline">Rogerio Almeida Coaching · Career &amp; Executive Coaching</span></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ============ I18N ============
+  const translations = {
+    en: {
+      'meta.title': 'Rogerio Almeida Coaching — Bravery, Clarity, and What Matters Most',
+      'meta.description': 'Career, leadership, and executive coaching. Partnering with you to move through transitions with bravery and clarity.',
+      'aria.home': 'Rogerio Almeida Coaching — home',
+
+      'nav.about': 'About',
+      'nav.experience': 'Experience',
+      'nav.values': 'Values',
+      'nav.services': 'Services',
+      'nav.contact': 'Contact',
+      'nav.cta': 'Book a call',
+
+      'hero.eyebrow': 'Career · Leadership · Executive Coaching',
+      'hero.title': 'Move through change with <em>bravery</em> and <em>clarity</em>.',
+      'hero.lead': "I'm a career and executive coach who partners with professionals stepping into local or international leadership roles—from their first management job to senior executive positions. Instead of giving advice, I help them unleash their potential by creating and improving self-awareness, empowering them to overcome struggles and build strong, high-performing teams.",
+      'hero.cta1': 'Book a discovery call <span class="arrow">→</span>',
+      'hero.cta2': 'See how I work',
+
+      'mission.text': 'Partnering with you to get through career and life changes with <strong>bravery</strong> and <strong>clarity</strong>. Together, we build a bridge to what matters most — helping you understand yourself better, reach your goals, and find real satisfaction.',
+
+      'about.label': '01 — About',
+      'about.title': "Hi, I'm Rogerio.",
+      'about.intro': 'A coach for the moments when something has to change — and you want a steady, honest partner walking alongside you.',
+      'about.p1': 'I work with professionals navigating career pivots, stepping into bigger leadership, and asking the deeper questions about what they actually want their lives to look like.',
+      'about.p2': "My approach is grounded and direct. We'll create a strong partnership to get clear on what matters, name what's getting in the way, and build the kind of action that's both brave and sustainable.",
+      'about.p3': 'I bring more than 20 years of experience leading global teams, complex projects, and people through change — across multinational organizations in technology, consumer goods, and enterprise software, with work in Canada, Brazil, and Latin America.',
+      'about.p4': "For the past 8 years, I've also coached professionals at IBM and mentored Computer Science students at the University of Toronto.",
+      'about.cred1.label': 'Coaching Training',
+      'about.cred1.value': 'Coach Academy Professional Coach Level 2 (ICF PCC track)',
+      'about.cred2.label': 'Background',
+      'about.cred2.value': 'Global sales enablement, project management, procurement & IT leadership',
+      'about.cred3.label': 'Specialties',
+      'about.cred3.value': 'Career transitions, executive leadership, personal growth',
+
+      'exp.label': '02 — Experience',
+      'exp.title': 'A career built on leading people through change.',
+      'exp.intro': 'The experience that shapes my coaching today started long before I called myself a coach.',
+      'exp.p1': "My career has progressed from front-line technical and operational roles into senior global leadership across information technology, procurement, and sales enablement. I've worked on the ground in Brazil and Canada, held senior management responsibility for Latin America and the Caribbean, and spent more than a decade leading global teams. The through-line has been a willingness to take on what didn't yet exist, build it well, and lead the people doing the work.",
+      'exp.p2': "Across these chapters, I've consistently led cross-functional teams through significant transitions: standing up new organizations from scratch, navigating cross-border and cross-cultural complexity, redesigning the processes underneath strategic change, and closing things gracefully when it was time. The leadership skills that shape my coaching today come directly from that work — knowing how to hold steady through ambiguity, how to ask the right question at the right moment, and how to help people find traction when the path forward isn't yet clear.",
+
+      'values.label': '03 — Values',
+      'values.title': 'The pillars I coach from.',
+      'values.intro': 'Every partnership I build is rooted in these four commitments — to you, and to the work we do together.',
+      'values.v1.title': 'Bravery & Fierce Resilience',
+      'values.v1.desc': "Facing transitions with the strength and courage to keep moving forward — even when the path isn't clear yet.",
+      'values.v2.title': 'The Grace of Kindness',
+      'values.v2.desc': 'Rooting every coaching partnership in empathy, support, and real human connection.',
+      'values.v3.title': 'Honesty',
+      'values.v3.desc': 'Building trust through transparent, authentic communication — even when the truth is hard to hear.',
+      'values.v4.title': 'Fair-minded Action',
+      'values.v4.desc': 'Ensuring growth is driven by equity, balance, and clear purpose — never pressure or performance.',
+
+      'services.label': '04 — Services',
+      'services.title': 'Ways we can work together.',
+      'services.intro': "Whether you're testing the waters or ready for a deeper engagement, there's a way in that fits where you are.",
+      'services.s1.title': 'Discovery Call',
+      'services.s1.desc': "A free, low-pressure conversation to explore what you're navigating and whether we're a good fit.",
+      'services.s1.price': 'Free',
+      'services.s1.duration': '· 30 min',
+      'services.s1.li1': '30-minute virtual call',
+      'services.s1.li2': 'No commitment to continue',
+      'services.s1.li3': 'Get a sense of how I work',
+      'services.s1.li4': 'Leave with one clear next step',
+      'services.s1.btn': 'Book a call →',
+      'services.s2.tag': 'Most chosen',
+      'services.s2.title': 'Multi-Session Package',
+      'services.s2.desc': 'Deep, sustained coaching for big transitions — a new role, a career pivot, a leadership leap.',
+      'services.s2.tier1.price': 'CAD$ 750',
+      'services.s2.tier1.label': '3 sessions',
+      'services.s2.tier2.price': 'CAD$ 1,200',
+      'services.s2.tier2.label': '6 sessions',
+      'services.s2.li1': '60-minute one-to-one sessions',
+      'services.s2.li2': 'Email support between sessions',
+      'services.s2.li3': 'Personalized practice between meetings',
+      'services.s2.li4': 'Custom goals and progress check-ins',
+      'services.s2.btn': 'Get started →',
+      'services.s3.title': 'Group Coaching & Workshops',
+      'services.s3.desc': 'Cohort-based programs and bespoke workshops for teams navigating change together.',
+      'services.s3.price': 'CAD$ 250',
+      'services.s3.duration': '· per participant',
+      'services.s3.li1': 'Small-group cohorts (6–8 people)',
+      'services.s3.li2': 'Six biweekly sessions over 3 months',
+      'services.s3.li3': 'Team and organizational offerings',
+      'services.s3.li4': 'Custom curriculum design available',
+      'services.s3.btn': 'Inquire →',
+      'services.sessions.label': 'Sessions',
+      'services.sessions.value': 'Virtual, worldwide · English & Portuguese',
+
+      'contact.label': '05 — Get in touch',
+      'contact.title': "Ready to begin? <em>Let's talk.</em>",
+      'contact.lead': 'The first step is a conversation. Book a free discovery call or send a note below — I read every message personally and reply within two business days.',
+      'contact.booking.title': 'Book a discovery call',
+      'contact.booking.desc': '30 minutes, free, no commitment. Pick a time that works for you.',
+      'contact.booking.btn': 'Open booking calendar →',
+      'contact.linkedin': 'Or connect on LinkedIn',
+      'form.title': 'Or send a note',
+      'form.intro': "Tell me a little about what you're navigating.",
+      'form.name': 'Your name',
+      'form.email': 'Email',
+      'form.focus': 'What are you working through?',
+      'form.option1': 'Career transition',
+      'form.option2': 'Leadership / executive coaching',
+      'form.option3': 'Personal growth',
+      'form.option4': 'Group coaching / workshop inquiry',
+      'form.option5': 'Not sure yet',
+      'form.message': 'A bit more (optional)',
+      'form.placeholder': "Anything you'd like me to know before we talk...",
+      'form.submit': 'Send message →',
+
+      'footer.tagline': 'Rogerio Almeida Coaching · Career & Executive Coaching'
+    },
+    pt: {
+      'meta.title': 'Rogerio Almeida Coaching — Coragem, Clareza e o Que Realmente Importa',
+      'meta.description': 'Coaching de carreira, liderança e executivo. Caminho ao seu lado nas transições, com coragem e clareza.',
+      'aria.home': 'Rogerio Almeida Coaching — início',
+
+      'nav.about': 'Sobre',
+      'nav.experience': 'Experiência',
+      'nav.values': 'Valores',
+      'nav.services': 'Serviços',
+      'nav.contact': 'Contato',
+      'nav.cta': 'Agende uma conversa',
+
+      'hero.eyebrow': 'Carreira · Liderança · Coaching Executivo',
+      'hero.title': 'Atravesse a mudança com <em>coragem</em> e <em>clareza</em>.',
+      'hero.lead': 'Sou coach de carreira e executivo e atuo ao lado de profissionais que assumem papéis de liderança locais ou internacionais — do primeiro cargo de gestão a posições executivas de alto nível. Em vez de dar conselhos, ajudo cada um a liberar seu potencial, criando e ampliando a autoconsciência, para que superem desafios e construam equipes fortes e de alto desempenho.',
+      'hero.cta1': 'Agende uma conversa inicial <span class="arrow">→</span>',
+      'hero.cta2': 'Veja como trabalho',
+
+      'mission.text': 'Caminhando ao seu lado nas mudanças de carreira e de vida, com <strong>coragem</strong> e <strong>clareza</strong>. Juntos, construímos uma ponte para o que mais importa — ajudando você a se compreender melhor, alcançar seus objetivos e encontrar satisfação verdadeira.',
+
+      'about.label': '01 — Sobre',
+      'about.title': 'Olá, sou o Rogerio.',
+      'about.intro': 'Um coach para os momentos em que algo precisa mudar — e você quer um parceiro firme e honesto caminhando ao seu lado.',
+      'about.p1': 'Trabalho com profissionais navegando reviravoltas de carreira, assumindo papéis de liderança maiores e fazendo as perguntas mais profundas sobre como realmente querem que suas vidas sejam.',
+      'about.p2': 'Minha abordagem é firme e direta. Vamos construir uma parceria sólida para esclarecer o que importa, nomear o que está no caminho e construir ações ao mesmo tempo corajosas e sustentáveis.',
+      'about.p3': 'Trago mais de 20 anos de experiência liderando equipes globais, projetos complexos e pessoas em transição — em organizações multinacionais nos setores de tecnologia, bens de consumo e software empresarial, com atuação no Canadá, Brasil e América Latina.',
+      'about.p4': 'Nos últimos 8 anos, também atuei como coach de profissionais na IBM e mentor de estudantes de Ciência da Computação na University of Toronto.',
+      'about.cred1.label': 'Formação em Coaching',
+      'about.cred1.value': 'Coach Academy Professional Coach Level 2 (trilha ICF PCC)',
+      'about.cred2.label': 'Trajetória',
+      'about.cred2.value': 'Sales enablement global, gestão de projetos, compras e liderança em TI',
+      'about.cred3.label': 'Especialidades',
+      'about.cred3.value': 'Transições de carreira, liderança executiva, crescimento pessoal',
+
+      'exp.label': '02 — Experiência',
+      'exp.title': 'Uma carreira construída liderando pessoas em transição.',
+      'exp.intro': 'A experiência que molda meu coaching hoje começou muito antes de eu me chamar de coach.',
+      'exp.p1': 'Minha carreira avançou de funções técnicas e operacionais para posições de liderança sênior global em tecnologia da informação, compras e sales enablement. Atuei diretamente no Brasil e no Canadá, assumi responsabilidade de gerência sênior pela América Latina e Caribe, e passei mais de uma década liderando equipes globais. O fio condutor sempre foi a disposição de assumir o que ainda não existia, construir com qualidade e liderar as pessoas que fazem o trabalho acontecer.',
+      'exp.p2': 'Ao longo desses capítulos, liderei consistentemente equipes multifuncionais por transições significativas: erguendo novas organizações do zero, navegando complexidade transfronteiriça e intercultural, redesenhando os processos por trás da mudança estratégica e encerrando o que precisava ser encerrado com cuidado. As habilidades de liderança que moldam meu coaching hoje vêm diretamente desse trabalho — saber manter a firmeza diante da ambiguidade, fazer a pergunta certa no momento certo e ajudar as pessoas a encontrarem tração quando o caminho ainda não está claro.',
+
+      'values.label': '03 — Valores',
+      'values.title': 'Os pilares que sustentam meu coaching.',
+      'values.intro': 'Toda parceria que construo é enraizada nesses quatro compromissos — com você e com o trabalho que fazemos juntos.',
+      'values.v1.title': 'Coragem e Resiliência Feroz',
+      'values.v1.desc': 'Enfrentar as transições com a força e a coragem para seguir em frente — mesmo quando o caminho ainda não está claro.',
+      'values.v2.title': 'A Graça da Gentileza',
+      'values.v2.desc': 'Enraizar toda parceria de coaching em empatia, apoio e conexão humana verdadeira.',
+      'values.v3.title': 'Honestidade',
+      'values.v3.desc': 'Construir confiança por meio de comunicação transparente e autêntica — mesmo quando a verdade é difícil de ouvir.',
+      'values.v4.title': 'Ação Justa',
+      'values.v4.desc': 'Garantir que o crescimento seja guiado por equidade, equilíbrio e propósito claro — nunca por pressão ou performance.',
+
+      'services.label': '04 — Serviços',
+      'services.title': 'Como podemos trabalhar juntos.',
+      'services.intro': 'Seja para uma primeira conversa ou para um engajamento mais profundo, existe uma porta de entrada para onde você está.',
+      'services.s1.title': 'Conversa Inicial',
+      'services.s1.desc': 'Uma conversa gratuita e sem pressão para explorar o que você está vivendo e se faz sentido seguirmos juntos.',
+      'services.s1.price': 'Grátis',
+      'services.s1.duration': '· 30 min',
+      'services.s1.li1': 'Conversa virtual de 30 minutos',
+      'services.s1.li2': 'Sem compromisso de continuidade',
+      'services.s1.li3': 'Conheça como trabalho',
+      'services.s1.li4': 'Termine com um próximo passo claro',
+      'services.s1.btn': 'Agende uma conversa →',
+      'services.s2.tag': 'Mais escolhido',
+      'services.s2.title': 'Pacote Multi-Sessão',
+      'services.s2.desc': 'Coaching profundo e contínuo para grandes transições — um novo cargo, uma reviravolta de carreira, um salto de liderança.',
+      'services.s2.tier1.price': 'R$ 1.800',
+      'services.s2.tier1.label': '3 sessões',
+      'services.s2.tier2.price': 'R$ 3.240',
+      'services.s2.tier2.label': '6 sessões',
+      'services.s2.li1': 'Sessões individuais de 60 minutos',
+      'services.s2.li2': 'Suporte por e-mail entre as sessões',
+      'services.s2.li3': 'Práticas personalizadas entre encontros',
+      'services.s2.li4': 'Metas personalizadas e acompanhamento de progresso',
+      'services.s2.btn': 'Começar →',
+      'services.s3.title': 'Coaching em Grupo e Workshops',
+      'services.s3.desc': 'Programas em grupo e workshops sob medida para equipes navegando mudanças juntas.',
+      'services.s3.price': 'R$ 500',
+      'services.s3.duration': '· por participante',
+      'services.s3.li1': 'Grupos pequenos (6 a 8 pessoas)',
+      'services.s3.li2': 'Seis sessões quinzenais ao longo de 3 meses',
+      'services.s3.li3': 'Ofertas para equipes e organizações',
+      'services.s3.li4': 'Design de currículo personalizado disponível',
+      'services.s3.btn': 'Solicite informações →',
+      'services.sessions.label': 'Sessões',
+      'services.sessions.value': 'Virtuais, internacionais · Inglês e Português',
+
+      'contact.label': '05 — Fale comigo',
+      'contact.title': 'Pronto para começar? <em>Vamos conversar.</em>',
+      'contact.lead': 'O primeiro passo é uma conversa. Agende uma conversa inicial gratuita ou envie uma mensagem abaixo — leio cada mensagem pessoalmente e respondo em até dois dias úteis.',
+      'contact.booking.title': 'Agende uma conversa inicial',
+      'contact.booking.desc': '30 minutos, grátis, sem compromisso. Escolha o horário que funciona para você.',
+      'contact.booking.btn': 'Abrir calendário →',
+      'contact.linkedin': 'Ou conecte-se no LinkedIn',
+      'form.title': 'Ou envie uma mensagem',
+      'form.intro': 'Conte um pouco sobre o que você está vivendo.',
+      'form.name': 'Seu nome',
+      'form.email': 'E-mail',
+      'form.focus': 'Sobre o que gostaria de conversar?',
+      'form.option1': 'Transição de carreira',
+      'form.option2': 'Coaching de liderança / executivo',
+      'form.option3': 'Crescimento pessoal',
+      'form.option4': 'Coaching em grupo / consulta sobre workshop',
+      'form.option5': 'Ainda não sei',
+      'form.message': 'Mais um pouco (opcional)',
+      'form.placeholder': 'Algo que você gostaria que eu soubesse antes da nossa conversa...',
+      'form.submit': 'Enviar mensagem →',
+
+      'footer.tagline': 'Rogerio Almeida Coaching · Coaching de Carreira e Executivo'
+    }
+  };
+
+  function setLanguage(lang) {
+    if (!translations[lang]) lang = 'en';
+    const dict = translations[lang];
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) el.placeholder = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      if (dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
+    });
+
+    if (dict['meta.title']) document.title = dict['meta.title'];
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && dict['meta.description']) metaDesc.setAttribute('content', dict['meta.description']);
+
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+
+    try { localStorage.setItem('rta_lang', lang); } catch (e) {}
+  }
+
+  (function initLang() {
+    let initial = 'en';
+    try {
+      const saved = localStorage.getItem('rta_lang');
+      if (saved && translations[saved]) {
+        initial = saved;
+      } else if (navigator.language && navigator.language.toLowerCase().startsWith('pt')) {
+        initial = 'pt';
+      }
+    } catch (e) {}
+
+    setLanguage(initial);
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+  })();
+
+  // ============ NAV SCROLL-SPY (active link highlight) ============
+  (function initScrollSpy() {
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const sections = navLinks
+      .map(link => {
+        const id = link.getAttribute('href');
+        return id && id.startsWith('#') ? document.querySelector(id) : null;
+      })
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    function setActive(id) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // Immediate feedback on click
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const id = link.getAttribute('href').replace('#', '');
+        setActive(id);
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
