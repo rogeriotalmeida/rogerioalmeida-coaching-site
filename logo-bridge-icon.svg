@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" role="img" aria-label="Rogerio Almeida Coaching icon">
+  <line x1="12" y1="78" x2="108" y2="78" stroke="#14213D" stroke-width="1.2" opacity="0.18"/>
+  <path d="M 18 72 Q 60 -2 102 72" fill="none" stroke="#14213D" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="18" cy="72" r="6" fill="#E5552E"/>
+  <circle cx="102" cy="72" r="6" fill="#E5552E"/>
+</svg>
