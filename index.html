@@ -915,18 +915,24 @@
         </a>
       </div>
 
-      <form action="mailto:rtalmeida@gmail.com" method="POST" enctype="text/plain">
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="f5f7bcd9-677e-4dd6-99b0-3e5f0c23e969" />
+        <input type="hidden" name="subject" value="New message from your coaching website" />
+        <input type="hidden" name="from_name" value="Rogerio Almeida Coaching" />
+        <!-- Honeypot spam protection (hidden from real users) -->
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important;" aria-hidden="true" />
+
         <h3 data-i18n="form.title">Or send a note</h3>
         <p data-i18n="form.intro">Tell me a little about what you're navigating.</p>
 
         <div class="field">
           <label for="name" data-i18n="form.name">Your name</label>
-          <input id="name" name="Name" type="text" required />
+          <input id="name" name="name" type="text" required />
         </div>
 
         <div class="field">
           <label for="email" data-i18n="form.email">Email</label>
-          <input id="email" name="Email" type="email" required />
+          <input id="email" name="email" type="email" required />
         </div>
 
         <div class="field">
@@ -942,10 +948,11 @@
 
         <div class="field">
           <label for="message" data-i18n="form.message">A bit more (optional)</label>
-          <textarea id="message" name="Message" data-i18n-placeholder="form.placeholder" placeholder="Anything you'd like me to know before we talk..."></textarea>
+          <textarea id="message" name="message" data-i18n-placeholder="form.placeholder" placeholder="Anything you'd like me to know before we talk..."></textarea>
         </div>
 
         <button type="submit" data-i18n="form.submit">Send message →</button>
+        <p id="form-status" role="status" aria-live="polite" style="display:none; margin:16px 0 0; font-size:14.5px; font-weight:600;"></p>
       </form>
     </div>
   </div>
@@ -1269,6 +1276,64 @@
         const id = link.getAttribute('href').replace('#', '');
         setActive(id);
       });
+    });
+  })();
+
+  // ============ CONTACT FORM (Web3Forms) ============
+  (function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    const status = document.getElementById('form-status');
+    const button = form.querySelector('button[type="submit"]');
+
+    const messages = {
+      en: {
+        sending: 'Sending…',
+        success: "Thank you — your message has been sent. I'll be in touch within two business days.",
+        error: 'Something went wrong. Please try again, or email me directly at rtalmeida@gmail.com.'
+      },
+      pt: {
+        sending: 'Enviando…',
+        success: 'Obrigado — sua mensagem foi enviada. Entrarei em contato em até dois dias úteis.',
+        error: 'Algo deu errado. Tente novamente ou envie um e-mail diretamente para rtalmeida@gmail.com.'
+      }
+    };
+
+    function lang() {
+      return (document.documentElement.lang === 'pt') ? 'pt' : 'en';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const msg = messages[lang()];
+      const data = new FormData(form);
+
+      button.disabled = true;
+      status.style.display = 'block';
+      status.style.color = 'var(--muted)';
+      status.textContent = msg.sending;
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+        const result = await res.json();
+        if (res.ok && result.success) {
+          status.style.color = 'var(--accent-deep)';
+          status.textContent = msg.success;
+          form.reset();
+        } else {
+          status.style.color = 'var(--accent-deep)';
+          status.textContent = msg.error;
+        }
+      } catch (err) {
+        status.style.color = 'var(--accent-deep)';
+        status.textContent = msg.error;
+      } finally {
+        button.disabled = false;
+      }
     });
   })();
 </script>
