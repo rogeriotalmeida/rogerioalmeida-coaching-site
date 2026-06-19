@@ -457,6 +457,12 @@
     letter-spacing: -0.01em;
   }
   .value-card p { margin: 0; font-size: 14.5px; line-height: 1.5; }
+  /* Reserve equal title height so descriptions align at the top across cards.
+     Tallest title differs by language (EN max 2 lines, PT max 3), so reserve per-language. */
+  @media (min-width: 521px) {
+    html[lang="en"] .value-card h3 { min-height: 2.4em; }
+    html[lang="pt"] .value-card h3 { min-height: 3.6em; }
+  }
   @media (max-width: 980px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 520px) { .values-grid { grid-template-columns: 1fr; } }
 
@@ -1242,7 +1248,7 @@
       'nav.cta': 'Agende uma conversa',
 
       'hero.eyebrow': 'Carreira · Liderança · Coaching Executivo',
-      'hero.title': 'Encarando mudanças com <em>coragem</em> e <em>clareza</em>.',
+      'hero.title': 'Navegando por mudanças com <em>coragem</em> e <em>clareza</em>.',
       'hero.lead': 'Se você está assumindo um papel de liderança — seja a primeira vez gerenciando uma equipe ou uma posição executiva sênior de alcance internacional — o coaching comigo ajuda você a chegar lá com clareza e confiança. Você vai desenvolver a autoconsciência para liderar com autenticidade, encontrar o seu próprio caminho diante dos desafios que vêm com o território e construir as habilidades para formar uma equipe forte e de alto desempenho ao seu redor. Não se trata de receber conselhos; trata-se de desbloquear o potencial que você já tem.',
       'hero.cta1': 'Agende uma conversa inicial <span class="arrow">→</span>',
       'hero.cta2': 'Veja como trabalho',
