@@ -518,6 +518,11 @@
     letter-spacing: -0.01em;
   }
   .service-desc { font-size: 15px; opacity: 0.85; margin: 0 0 20px; }
+  /* Reserve equal title/description height so content below lines up when cards are side by side */
+  @media (min-width: 921px) {
+    .service-card h3 { min-height: 2.3em; }   /* ~2 lines */
+    .service-desc { min-height: 4.8em; }       /* ~3 lines */
+  }
   .service-price {
     font-family: 'Fraunces', Georgia, serif;
     font-weight: 900;
@@ -965,7 +970,7 @@
 
     <div class="services-grid">
       <div class="service-card">
-        <h3 data-i18n="services.s1.title">Discovery Call</h3>
+        <h3 data-i18n="services.s1.title">Introductory Discovery Call</h3>
         <p class="service-desc" data-i18n="services.s1.desc">A free, low-pressure conversation to explore what you're navigating and whether we're a good fit.</p>
         <div class="service-price"><span data-i18n="services.s1.price">Free</span> <small data-i18n="services.s1.duration">· 30 min</small></div>
         <ul class="service-list">
@@ -1172,7 +1177,7 @@
       'services.label': '05 — Services',
       'services.title': 'Ways we can work together.',
       'services.intro': "Whether you're testing the waters or ready for a deeper engagement, there's a way in that fits where you are.",
-      'services.s1.title': 'Discovery Call',
+      'services.s1.title': 'Introductory Discovery Call',
       'services.s1.desc': "A free, low-pressure conversation to explore what you're navigating and whether we're a good fit.",
       'services.s1.price': 'Free',
       'services.s1.duration': '· 30 min',
@@ -1291,7 +1296,7 @@
       'services.label': '05 — Serviços',
       'services.title': 'Como podemos trabalhar juntos.',
       'services.intro': 'Seja para uma primeira conversa ou para um engajamento mais profundo, existe uma porta de entrada para onde você está.',
-      'services.s1.title': 'Conversa Inicial',
+      'services.s1.title': 'Conversa Introdutória',
       'services.s1.desc': 'Uma conversa gratuita e sem pressão para explorar o que você está vivendo e se faz sentido seguirmos juntos.',
       'services.s1.price': 'Grátis',
       'services.s1.duration': '· 30 min',
